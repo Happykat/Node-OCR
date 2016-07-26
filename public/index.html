@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Node-OCR</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <a href="#" class="brand-logo center">Node-OCR</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m12 ">
+          <div class="card">
+            <div class="card-content center teal lighten-2 white-text">
+              <h5 class="instruction-title">Instructions</h5>
+              <p>
+                This is a demonstration of Optical character recognition with NodeJS.
+                Tweak the settings to get the best result !
+                <br>
+                An image is well suited for OCR when the text is black on white with
+                as less noise as possible.
+                <br>
+                Enjoy it !
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col m6 s12 left">
+
+          <h2 class="teal-text"><i class="material-icons">settings</i>Settings </h2>
+
+          <style is="custom-style">
+            paper-slider.slider-blue{
+              --paper-slider-knob-color: teal;
+              --paper-slider-active-color: teal;
+              width: 70%;
+              padding-bottom: 20px;
+            }
+          </style>
+
+          <h7 class="teal-text">Minimum threshold</h7>
+          <paper-slider class="slider-blue" value="0" max="1000"></paper-slider>
+          <h7 class="teal-text">Maximum threshold</h7>
+          <paper-slider  class="slider-blue" value="0" max="1000"></paper-slider>
+          <h7 class="teal-text">Matrix size</h7>
+          <paper-slider class="slider-blue" value="0" max="1000"></paper-slider>
+
+          <div class="reverse">
+            <input type="checkbox" id="test5" />
+            <label for="test5">Reverse threshold</label>
+          </div>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action"> Decode
+            <i class="material-icons right">assignment</i>
+          </button>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action">Preview
+            <i class="material-icons right">aspect_ratio</i>
+          </button>
+
+        </div>
+        <div class="col m6 s12 left">
+          <h2 class="teal-text">Preview <i class="material-icons">picture_in_picture</i></h2>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col m12 s12 left">
+          <h2 class="teal-text"><i class="material-icons">clear_all</i>OCR Result</h2>
+          <div class="card-panel teal lighten-2">
+            <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <footer class="page-footer teal lighten-2">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2016 Hector Roussille , Alexandre Moulay
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</html>
