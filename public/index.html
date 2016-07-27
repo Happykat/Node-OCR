@@ -4,7 +4,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Node-OCR</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
     <![endif]-->
@@ -16,14 +15,14 @@
   </head>
   <body>
 
-    <nav>
-      <div class="nav-wrapper teal lighten-2">
-        <a href="#" class="brand-logo center">Node-OCR</a>
-      </div>
-    </nav>
 
     <div class="container">
 
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <a href="#" class="brand-logo center">Node-OCR</a>
+        </div>
+      </nav>
       <div class="row">
         <div class="col s12 m12 ">
           <div class="card">
@@ -55,25 +54,32 @@
               width: 70%;
               padding-bottom: 20px;
             }
+            @media screen and (max-width: 1200px) {
+              paper-slider.slider-blue {
+                width: 90%;
+              }
+            }
           </style>
 
+          <h7 class="teal-text">Blur</h7>
+          <paper-slider id="blur" class="slider-blue" value="0" max="10"></paper-slider>
           <h7 class="teal-text">Minimum threshold</h7>
-          <paper-slider class="slider-blue" value="0" max="1000"></paper-slider>
+          <paper-slider id="min-threshold" class="slider-blue" value="0" max="1000"></paper-slider>
           <h7 class="teal-text">Maximum threshold</h7>
-          <paper-slider  class="slider-blue" value="0" max="1000"></paper-slider>
+          <paper-slider  id="max-threshold" class="slider-blue" value="0" max="1000"></paper-slider>
           <h7 class="teal-text">Matrix size</h7>
-          <paper-slider class="slider-blue" value="0" max="1000"></paper-slider>
+          <paper-slider id="matrix-size" class="slider-blue" value="0" max="1000"></paper-slider>
 
           <div class="reverse">
-            <input type="checkbox" id="test5" />
+            <input type="checkbox" id="reverse-threshold" />
             <label for="test5">Reverse threshold</label>
           </div>
 
-          <button class="btn waves-effect waves-light" type="submit" name="action"> Decode
+          <button class="btn waves-effect waves-light"  id="decode" type="submit" name="action"> Decode
             <i class="material-icons right">assignment</i>
           </button>
 
-          <button class="btn waves-effect waves-light" type="submit" name="action">Preview
+          <button class="btn waves-effect waves-light" id="preview" type="submit" name="action">Preview
             <i class="material-icons right">aspect_ratio</i>
           </button>
 
@@ -81,7 +87,7 @@
         <div class="col l6 m12 left">
           <h2 class="teal-text">Preview <i class="material-icons">picture_in_picture</i></h2>
           <div class="progress">
-            <div class="determinate" style="width: 70%"></div>
+            <div class="determinate" id="preview-progress" style="width: 100%;"></div>
           </div>
           <div class="card">
             <div class="card-image">
@@ -95,6 +101,9 @@
       <div class="row">
         <div class="col m12 s12 left">
           <h2 class="teal-text"><i class="material-icons">clear_all</i>OCR Result</h2>
+          <div class="progress" id="ocr-progress" >
+            <div class="indeterminate" ></div>
+          </div>
           <div class="card-panel teal lighten-2">
             <span class="white-text">
               Hit the decode button to start the recognition !
@@ -111,6 +120,8 @@
         </div>
       </div>
     </footer>
+
+    <a href="https://github.com/Happykat/Node-OCR"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
   </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
