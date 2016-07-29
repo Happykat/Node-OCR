@@ -17,7 +17,7 @@ $(document).ready(function () {
   function updateDecode(data) {
     console.log(data);
     data = data.replace(/(?:\r\n|\r|\n)/g, '<br />');
-    $("#decodeContent").text(data);
+    $("#decodeContent").html(data);
     decodeProgressHandler(false);
   };
 

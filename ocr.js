@@ -6,7 +6,7 @@ var options = {
 };
 
 var process = function (socket) {
-  tesseract.process(__dirname + '/public/images/processed.png', options, function(err, text) {
+  tesseract.process(__dirname + '/public/images/processed.jpg', options, function(err, text) {
     console.log("done !");
     if(err) {
       result = err;
