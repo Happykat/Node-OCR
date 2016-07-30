@@ -23,18 +23,20 @@ $(document).ready(function () {
 
   // Settings getter
   function getSettings() {
-    var blurElem = $("#blur");
-    var minElem  = $("#min-threshold");
-    var maxElem  = $("#max-threshold");
-    var matrix   = $("#matrix-size");
-    var revElem  = $("#reverse-threshold");
+    var blurElem     = $("#blur");
+    var constElem    = $("#constant");
+    var threshold    = $("#max-threshold");
+    var matrix       = $("#matrix-size");
+    var revElem      = $("#reverse-threshold");
+    var isolate      = $("#isolate");
 
     return {
-      "blur" : blurElem.val(),
-      "min"  : minElem.val(),
-      "max"  : maxElem.val(),
-      "mat"  : matrix.val(),
-      "rev"  : revElem.is(':checked'),
+      "blur"    : blurElem.val(),
+      "const"   : constElem.val(),
+      "thresh"  : threshold.val(),
+      "matrix"  : matrix.val(),
+      "revert"  : revElem.is(':checked'),
+      "isolate" : isolate.is(':checked')
     };
   }
   // preview progress bar

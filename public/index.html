@@ -63,16 +63,24 @@
 
           <h7 class="teal-text">Blur</h7>
           <paper-slider id="blur" class="slider-blue" value="0" max="10"></paper-slider>
-          <h7 class="teal-text">Minimum threshold</h7>
-          <paper-slider id="min-threshold" class="slider-blue" value="0" max="250"></paper-slider>
-          <h7 class="teal-text">Maximum threshold</h7>
-          <paper-slider  id="max-threshold" class="slider-blue" value="0" max="250"></paper-slider>
+
+          <h7 class="teal-text">Constant</h7>
+          <paper-slider id="constant" class="slider-blue" value="0" max="100"></paper-slider>
+
+          <h7 class="teal-text">Threshold</h7>
+          <paper-slider  id="max-threshold" class="slider-blue" value="0" max="255"></paper-slider>
+
           <h7 class="teal-text">Matrix size</h7>
           <paper-slider id="matrix-size" class="slider-blue" value="0" max="100"></paper-slider>
 
           <div class="reverse">
             <input type="checkbox" id="reverse-threshold" />
-            <label for="reverse-threshold">Reverse threshold</label>
+            <label for="reverse-threshold">Reverse image</label>
+          </div>
+
+          <div class="isolate">
+            <input type="checkbox" id="isolate" />
+            <label for="isolate">Isolate biggest area</label>
           </div>
 
           <button class="btn waves-effect waves-light"  id="decode" type="submit" name="action"> Decode

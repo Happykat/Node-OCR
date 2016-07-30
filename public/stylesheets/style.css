@@ -33,6 +33,11 @@ button {
   padding-left: 10px;
   z-index: 160; }
 
+.isolate {
+  padding-bottom: 30px;
+  padding-left: 10px;
+  z-index: 160; }
+
 .card-content p {
   font-size: 17px; }
 
